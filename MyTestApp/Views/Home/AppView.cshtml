@@ -1,0 +1,39 @@
+﻿@model MyTestApp.Models.Palindrome
+
+
+<main class="flex-shrink-0">
+        <div class="container mt-5">
+            <!--  -->
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col col-8">
+                    <h1 class="display-6 lh-1 mb-3 border border-4 rounded-pill text-center lh-1 logoBG logoFont">RADAR
+                    </h1>
+                    <h4 class="blockquote">Will your word be the same backwards as forwards(a palindrome)? Use RADAR to find out!</h4> 
+                    <h5 class="lead"> This app only compares Alphanumeric characters and not special characters.</h5>
+                </div>
+                <div class="col col-4">
+                    <h5>Enter a string (series of characters) to check.</h5>
+                    @using(Html.BeginForm())
+                    {
+                        <div class="row w-75">
+                            @Html.TextBoxFor(b => b.InputWord)
+                        </div>
+                        <div class="text-danger">
+                        @Html.ValidationSummary()
+                        </div>
+                        <button class="btn btn-dark" type="submit">Check for Palindrome</button>
+                    }
+                    <div class="alert alert-dark mt-5 fade show">
+                        <h4 class="alert-heading">The reverse of the word(s) you entered is: 
+                            <span class="text-danger">@Model.RevWord</span>
+                        </h4>
+                        <hr />
+                        <p class="mb-0">@Model.Message</p>
+                    </div>
+                    <div>
+                        <a href="/Home/Palindrome" class="btn btn-danger">Clear Form</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
