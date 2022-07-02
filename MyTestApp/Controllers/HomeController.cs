@@ -53,7 +53,6 @@ namespace MyTestApp.Controllers
                 palindrome.IsPalindrome = false;
                 palindrome.Message = $"Sorry {palindrome.InputWord} is not a Palindrome.";
             }
-
             // redirect
             return View("AppView", palindrome);
         }
